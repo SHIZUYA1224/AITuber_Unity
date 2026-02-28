@@ -1,0 +1,78 @@
+.messages-element {
+    width: 45%;
+    min-width: 520px;
+    height: 100%;
+    flex-direction: column;
+    margin: 0;
+    padding: 12px;
+    background-color: rgba(17, 18, 24, 0.72);
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+}
+
+.messages-list {
+    flex-grow: 1;
+    flex-direction: column-reverse;
+}
+
+.input-area {
+    flex-direction: row;
+    min-height: 74px;
+    padding: 8px;
+    margin-top: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+.mic-button {
+    width: 42px;
+    height: 42px;
+    margin-right: 8px;
+    border-radius: 21px;
+    background-image: url('/Assets/Icons/MaterialSymbolsMic.png');
+    background-color: #ffbd59;
+    border-width: 0;
+}
+
+.message-input {
+    flex-grow: 1;
+    margin: 0;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.message-item {
+    margin: 8px 0;
+    border-radius: 14px;
+    padding: 0;
+    border-width: 1px;
+}
+
+.message-item--user {
+    align-self: flex-end;
+    background-color: #fff7dd;
+    border-color: #e7c979;
+}
+
+.message-item--assistant {
+    align-self: flex-start;
+    background-color: #e8f6ff;
+    border-color: #8dc3df;
+}
+
+.user-name {
+    margin: 0;
+    padding: 6px 10px;
+    -unity-font-style: bold;
+    border-top-left-radius: 14px;
+    border-top-right-radius: 14px;
+    color: #1d2730;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+.message-content {
+    white-space: normal;
+    padding: 8px 10px 10px;
+    color: #111827;
+    font-size: 13px;
+}
