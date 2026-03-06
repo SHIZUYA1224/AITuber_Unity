@@ -210,6 +210,7 @@ namespace Chat
             }
             if (emotionController == null) return;
 
+            emotionController.SetSpeechAudioSource(_characterAudioSource);
             emotionController.SetEmotion(emotionKey);
         }
 

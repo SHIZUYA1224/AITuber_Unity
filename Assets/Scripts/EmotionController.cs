@@ -8,6 +8,8 @@ public class EmotionController : MonoBehaviour
     private Vrm10Instance vrmInstance;
     [SerializeField]
     private float emotionHoldSeconds = 2.0f;
+    [SerializeField]
+    private AudioSource speechAudioSource;
     private static readonly Dictionary<string, ExpressionPreset> EmotionMap = new()
     {
         {"normal", ExpressionPreset.neutral},
@@ -22,6 +24,7 @@ public class EmotionController : MonoBehaviour
     private void Update()
     {
         if (!hasActiveEmotion) return;
+        if (IsSpeaking()) return;
         emotionTimer -= Time.deltaTime;
         if (emotionTimer > 0f) return;
 
@@ -40,6 +43,11 @@ public class EmotionController : MonoBehaviour
             {
                 vrmInstance = FindAnyObjectByType<Vrm10Instance>();
             }
+        }
+
+        if (speechAudioSource == null)
+        {
+            speechAudioSource = GetComponent<AudioSource>();
         }
 
         if (vrmInstance == null)
@@ -102,5 +110,17 @@ public class EmotionController : MonoBehaviour
         hasActiveEmotion = false;
         emotionTimer = 0f;
         ResetEmotionToNeutral();
+    }
+
+    private bool IsSpeaking()
+    {
+        return speechAudioSource != null
+            && speechAudioSource.clip != null
+            && speechAudioSource.isPlaying;
+    }
+
+    public void SetSpeechAudioSource(AudioSource source)
+    {
+        speechAudioSource = source;
     }
 }
