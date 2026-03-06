@@ -20,6 +20,6 @@ MonoBehaviour:
   MaterialColorBindings: []
   MaterialUVBindings: []
   IsBinary: 0
-  OverrideBlink: 0
+  OverrideBlink: 1
   OverrideLookAt: 0
   OverrideMouth: 0
